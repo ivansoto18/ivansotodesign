@@ -773,6 +773,9 @@ li {
         transition: right 0.3s ease;
         z-index: 1000;
     }
+    .menu {
+        justify-content: end;
+    }
       
     /* Cuando el checkbox está checked, mostramos el menú */
     input[type="checkbox"]:checked ~ .menu-list {
