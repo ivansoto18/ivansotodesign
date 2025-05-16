@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!--- Favicon--->
+    <link rel="icon" type="image/webp" href="../assets/images/favicon.webp">
+    <title>Presupuesto | Iván Soto - Diseñador web y gráfico</title>
+    <script src="https://kit.fontawesome.com/f0618a2a0c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img class="logo" src="../assets/images/ivan-soto-logo.webp" alt="Iván Soto, diseñador web y gráfico"></a>
+
+        <input type="checkbox" id="check-menu" class="check-menu">
+
+        <nav class="nav-links">
+            <a href="../views/portfolio.html">Portfolio</a>
+            <a href="#" class="active">Presupuesto</a>
+            <a href="../views/contacto.html">Contacto</a>
+        </nav>
+
+        <label for="check-menu" class="label-check">
+            <img src="../assets/images/menu-hamburguesa.svg" alt="Icono de menú para versión móvil" width="60" height="60">
+        </label>
+
+        <div class="iconos">
+            <a href="https://www.linkedin.com/in/ivan-soto-coalla1892/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            
+            <a href="https://www.behance.net/ivansoto18" target="_blank"><i class="fa-brands fa-square-behance"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="flecha-top">
+            <a href="#"><img src="../assets/images/arrow-up.svg" alt="Ir al principio de la página"></a>
+        </div>
+
+        <div class="hero">
+            <h1>Presupuesto</h1>
+        </div>
+
+        <section class="contenido contenido-azul">
+            <div class="contenedor-rev">
+                    <div class="texto-formulario">
+                        <h2>Solicita presupuesto</h2>
+                        <p class="texto-presupuesto">¿Estás pensando en tener una página web o tienda online de tu empresa o rediseñar la que ya tienes?<br><br>O en cambio, ¿necesitas el diseño de un logotipo, material publicitario o cualquier otro producto impreso?<br><br>Cuéntame tu idea para poder realizarte un presupuesto sin ningún tipo de compromiso.</p>
+                    </div>
+
+                    <div class="formulario">
+                        <form class="contact-form" action="https://formsubmit.co/ivansoto1892@gmail.com" method="POST">
+
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Indica tu nombre" required>
+                    
+                            <label for="email">Correo</label>
+                            <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
+                    
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" name="telefono" id="telefono" placeholder="Escribe un teléfono al que poder contactarte" required>
+                    
+                            <label for="mensaje">Solicite más información</label>
+                            <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje" rows="4" required></textarea>
+                    
+                            <div class="consentimiento">
+                                <input type="checkbox" id="privacidad" name="privacidad" required>
+                                <label for="privacidad">
+                                He leído y acepto la <a href="../views/politica-de-privacidad.html" target="_blank">Política de privacidad</a>
+                                </label>
+                            </div>
+                                <!-- Pagina de agradecimiento -->
+                                <input type="hidden" name="_next" value="../gracias.html">
+        
+                                <!--Asunto del correo-->
+                                <input type="hidden" name="_subject" value="Solicitud de presupuesto">
+                    
+                                <input type="submit" value="Enviar">
+                        </form>
+                    </div>
+
+                
+            </div>
+        </section>
+
+    </section>
+
+    </main>
+
+<footer>
+    <div class="footer-row">
+        <div class="col">
+            <div class="col-content">
+                <p class="pie"><i class="fas fa-map-marker"></i> C/ Arquitecto Tioda, 13 3ºC - 33012 Oviedo (Asturias)<br><i class="fas fa-phone-alt"></i> <a href="tel:617640494" target="_blank"> 617 640 494</a><br><i class="fas fa-envelope"></i> <a href="mailto:ivansoto1892@gmail.com" target="_blank"> ivansoto1892@gmail.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <ul>
+                    <li><a href="../views/aviso-legal.html">Aviso Legal</a></li>
+                        <li><a href="../views/politica-de-privacidad.html">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="col-content">
+                <a href="https://www.linkedin.com/in/ivan-soto-coalla1892/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            
+                <a href="https://www.behance.net/ivansoto18" target="_blank"><i class="fa-brands fa-square-behance"></i></a>
+            </div>
+        </div>
+
+    </div>
+    
+</footer>
+
+</body>
+</html>
