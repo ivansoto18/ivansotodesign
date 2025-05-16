@@ -178,14 +178,15 @@ section.contenido-portfolio-grafico {
 
 .contenedor-portfolio {
     background-color: #f9ae12;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding: 2rem 1rem;
-}
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .contenido-interno {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
 .contenedor-portfolio-seccion {
     display: flex;
