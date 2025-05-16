@@ -33,13 +33,6 @@ header img {
     max-width: 150px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
 .hero {
     height: 400px;
     display: flex;
@@ -67,6 +60,40 @@ img.iconos:hover {
 }
 
 /* estilos header */
+
+/* Se oculta el checkbox */
+.menu input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilos del icono hamburguesa */
+.menu-icon {
+    display: none; /* solo se muestra en móvil */
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1001;
+    -webkit-tap-highlight-color: transparent;
+}
+  
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin-bottom: 5px;
+    background: #f9ae12;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+  
+/* Lista de menú */
+  .menu-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
 header i.fa-brands.fa-linkedin,
 header i.fa-brands.fa-square-behance {
     font-size: 1.5rem;
@@ -77,15 +104,6 @@ header i.fa-brands.fa-linkedin:hover,
 header i.fa-brands.fa-square-behance:hover {
     font-size: 1.5rem;
     color: #f9ae12;
-}
-
-/* menu hamburguesa */
-.check-menu {
-    display: none;
-}
-
-.label-check {
-    display: none;
 }
 
 /* estilos secciones */
@@ -123,6 +141,7 @@ section {
 .contenido-portfolio {
     display: grid;
     grid-template-rows: row 1fr auto;
+    padding: 0 20px;
 }
 
 section.contenido-portfolio-web {
@@ -433,7 +452,7 @@ input[type="submit"]:hover {
 footer {
     background-color:#2e2e5f;
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -491,7 +510,7 @@ footer i.fa-brands.fa-square-behance:hover {
 }
 
 /* estilos de texto */
-.nav-links a {
+.menu-list li a {
     font-family: montserrat, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -501,7 +520,7 @@ footer i.fa-brands.fa-square-behance:hover {
     text-decoration: none;
 }
 
-.nav-links a:hover {
+.menu-list li a:hover {
     font-family: montserrat, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -671,80 +690,58 @@ ul {
         margin-top: 0px;
     }
 
-    .label-check {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        gap: 0;
-        width: 100%;
-    }
-
-    .nav-links a {
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-        background-color: #2e2e5f;
-        width: 100%;
-    }
-
-    .check-menu:checked + .nav-links {
-        display: flex;
-    }
+    @media (max-width: 768px) {
+        .menu-icon {
+          display: block;
+        }
+      
+        .menu-list {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 250px;
+          height: 100vh;
+          background: linear-gradient(135deg, #2e2e5f 0%, #1b1b3d 100%);
+          flex-direction: column;
+          align-items: start;
+          padding: 3rem 2rem;
+          gap: 2rem;
+          transition: right 0.3s ease;
+          z-index: 1000;
+        }
+      
+        /* Cuando el checkbox está checked, mostramos el menú */
+        input[type="checkbox"]:checked ~ .menu-list {
+          right: 0;
+        }
+      
+        /* Animación del icono hamburguesa cuando está activo */
+        input[type="checkbox"]:checked + .menu-icon span:nth-child(1) {
+          transform: rotate(45deg);
+          position: relative;
+          top: 8px;
+        }
+        input[type="checkbox"]:checked + .menu-icon span:nth-child(2) {
+          opacity: 0;
+        }
+        input[type="checkbox"]:checked + .menu-icon span:nth-child(3) {
+          transform: rotate(-45deg);
+          position: relative;
+          top: -8px;
+        }
+}
 
     header .iconos {
         display: none;
     }
-
-    header {
-        padding-top: 10px;
-    }
-
-    footer {
-        padding: 0 10%;
-    }
     .flecha-top {
         display: none;
     }
-}
-/* menu hamburguesa en movil */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: #2e2e5f;
-        display: none;
-        text-align: center;
-        gap: 20px;
-        padding: 20px 0;
-        z-index: 100;
-    }
-
-    .label-check {
-        display: block;
-        cursor: pointer;
-        z-index: 101;
-    }
-
-    .check-menu:checked ~ .nav-links {
-        display: flex;
-    }
-
-    .iconos {
-        display: none;
-    }
-
     header {
         position: relative;
         padding: 0 5%;
     }
+    footer {
+        padding: 20px 15px;
+      }
 }
