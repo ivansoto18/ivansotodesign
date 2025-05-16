@@ -702,6 +702,8 @@ ul {
     .trabajos {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+            padding-left: 5%;
+            padding-right: 5%;
     }
 
     .portfolio-top {
