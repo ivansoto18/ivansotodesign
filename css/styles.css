@@ -715,6 +715,10 @@ ul {
     header {
         padding-top: 10px;
     }
+    .formulario {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
 }
 
 /* estilos movil */
@@ -798,6 +802,10 @@ ul {
         padding: 10px 0;
         width: 100%;
         text-align: center;
+    }
+    .formulario {
+        padding-left: 0%;
+        padding-right: 0%;
     }
 }
 
