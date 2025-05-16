@@ -77,14 +77,14 @@ header {
     justify-content: center;
 }
 
-header img {
+header .logo {
     position: absolute;
-    left: 2rem;
+    left: 10%;
     max-width: 150px;
 }
 header .iconos {
     position: absolute;
-    right: 2rem;
+    right: 10%;
     display: flex;
     gap: 1rem;
 }
