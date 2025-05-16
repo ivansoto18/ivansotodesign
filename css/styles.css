@@ -5,7 +5,21 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow-x: none;
+}
+
+/* evitar overflow-x en la pagina */
+html, body {
+    overflow-x: hidden;
+}
+.contenedor, .contenedor-portfolio, .contenedor-rev {
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {
@@ -139,9 +153,11 @@ section {
 }
 
 .contenido-portfolio {
-    display: grid;
-    grid-template-rows: row 1fr auto;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.contenido-portfolio-web {
@@ -670,10 +686,6 @@ ul {
     header {
         padding-top: 10px;
     }
-
-    footer {
-        padding: 0 10%;
-    }
 }
 
 /* estilos movil */
@@ -690,7 +702,6 @@ ul {
         margin-top: 0px;
     }
 
-    @media (max-width: 768px) {
         .menu-icon {
           display: block;
         }
@@ -742,6 +753,22 @@ ul {
         padding: 0 5%;
     }
     footer {
-        padding: 20px 15px;
-      }
-}
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
