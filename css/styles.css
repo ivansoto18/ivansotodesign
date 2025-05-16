@@ -755,9 +755,8 @@ ul {
           position: relative;
           top: -8px;
         }
-}
-
-    header .iconos {
+        
+        header .iconos {
         display: none;
     }
     .flecha-top {
@@ -773,7 +772,6 @@ ul {
         align-items: center;
         padding: 20px 10px;
     }
-
     .footer-row {
         flex-direction: column;
         width: 100%;
@@ -782,14 +780,15 @@ ul {
         justify-content: center;
         align-items: center;
     }
-
     .col {
         padding: 10px 0;
         width: 100%;
         text-align: center;
     }
+}
+
     @media (min-width: 768px) {
         .contenedor-portfolio {
           padding: 4rem 2rem;
         }
-      }
+    }
