@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -710,5 +711,40 @@ ul {
     }
     .flecha-top {
         display: none;
+    }
+}
+/* menu hamburguesa en movil */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #2e2e5f;
+        display: none;
+        text-align: center;
+        gap: 20px;
+        padding: 20px 0;
+        z-index: 100;
+    }
+
+    .label-check {
+        display: block;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .check-menu:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .iconos {
+        display: none;
+    }
+
+    header {
+        position: relative;
+        padding: 0 5%;
     }
 }
