@@ -712,7 +712,11 @@ li {
     }
 
     header {
-        padding-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10%;
     }
     .formulario {
         padding-left: 15%;
@@ -796,10 +800,6 @@ li {
     }
     .flecha-top {
         display: none;
-    }
-    header {
-        justify-content: space-between;
-        padding: 0 1rem;
     }
     footer {
         flex-direction: column;
