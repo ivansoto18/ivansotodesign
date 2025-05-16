@@ -79,21 +79,27 @@ header {
 }
 
 header .logo {
-    position: absolute;
-    left: 10%;
-    max-width: 150px;
+    max-height: 60px;
+    height: auto;
 }
+
 header .iconos {
-    position: absolute;
-    right: 10%;
+    flex: 1;
     display: flex;
+    justify-content: flex-end;
     gap: 1rem;
 }
+
+header a .logo {
+    flex: 1;
+}
+
 /* Menú centrado*/
 .menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
 }
 
 /* Se oculta el checkbox */
