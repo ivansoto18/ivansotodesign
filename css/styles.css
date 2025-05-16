@@ -635,6 +635,9 @@ ul {
     color: white;
     margin-left: 15px;
 }
+li {
+    font-size: 0.9rem;
+}
 
 /* animaciones */
 
