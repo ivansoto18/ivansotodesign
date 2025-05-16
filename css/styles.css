@@ -69,12 +69,13 @@ img.iconos:hover {
 
 /* estilos header */
 header {
-    position: relative;
-    height: 80px;
-    background: linear-gradient(rgba(46, 46, 95, 1), rgba(46, 46, 95, 0.8));
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    height: 80px;
+    padding: 0px 10%;
+    background: linear-gradient(rgba(46, 46, 95, 1), rgba(46, 46, 95, 0.8));
 }
 
 header .logo {
