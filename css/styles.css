@@ -723,6 +723,23 @@ ul {
 
 /* estilos movil */
 @media (max-width: 768px) {
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 50px auto;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .datos-contacto, .mapa {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mapa iframe {
+        width: 100% !important;
+        height: 300px !important;
+    }
     .trabajos {
         grid-template-columns: repeat(2, 1fr);
     }
