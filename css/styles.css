@@ -96,14 +96,14 @@ header a .logo {
 
 }
 
-/* Se oculta el checkbox */
+/* Ocultar casilla de checkbox */
 .menu input[type="checkbox"] {
     display: none;
 }
 
 /* Estilos del icono hamburguesa */
 .menu-icon {
-    display: none; /* solo se muestra en móvil */
+    display: none; /* para que solo se muestre en móvil */
     cursor: pointer;
     width: 30px;
     height: 25px;
@@ -121,9 +121,8 @@ header a .logo {
     border-radius: 3px;
     transition: all 0.3s ease;
 }
-  
-/* Lista de menú */
-  .menu-list {
+
+.menu-list {
     list-style: none;
     display: flex;
     gap: 2rem;
@@ -193,9 +192,9 @@ section.contenido-portfolio-grafico {
     background-color: #f9ae12;
     width: 100%;
     padding: 2rem 0;
-  }
+}
   
-  .contenido-interno {
+.contenido-interno {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -203,7 +202,7 @@ section.contenido-portfolio-grafico {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
 .contenedor-portfolio-seccion {
     display: flex;
@@ -258,7 +257,7 @@ section.contenido-portfolio-grafico {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* cubre toda la imagen */
+    height: 100%;
     background: linear-gradient(to top, #242545 0%, transparent 15%);
     pointer-events: none;
 }
@@ -281,7 +280,7 @@ section.textos-legales {
 }
 
 
-/* estilo de boton */
+/* estilo de botones */
 button.cv {
     background-color: white;
     border-radius: 5px;
@@ -777,12 +776,12 @@ li {
         justify-content: end;
     }
       
-    /* Cuando el checkbox está checked, mostramos el menú */
+    /* Para que se muestre menu en movil */
     input[type="checkbox"]:checked ~ .menu-list {
           right: 0;
     }
       
-    /* Animación del icono hamburguesa cuando está activo */
+    /* Animación del menu hamburguesa */
     input[type="checkbox"]:checked + .menu-icon span:nth-child(1) {
           transform: rotate(45deg);
           position: relative;
