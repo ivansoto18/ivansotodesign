@@ -333,7 +333,7 @@ button.portfolio:hover {
 }
 
 button.portfolio a {
-    color:white;
+    color: #2e2e5f;
     text-decoration: none;
 }
 
@@ -411,12 +411,12 @@ button.portfolio a:hover {
 
 .contenido-portfolio-web h2,
 .contenido-portfolio-grafico h2 {
-    color:#242545;
+    color:#2e2e5f;
 }
 
 .contenido-portfolio-web p,
 .contenido-portfolio-grafico p {
-    color:#242545;
+    color:#2e2e5f;
 }
 
 /* estilos formulario */
