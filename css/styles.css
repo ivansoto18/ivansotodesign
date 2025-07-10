@@ -72,9 +72,8 @@ header {
     background: linear-gradient(rgba(46, 46, 95, 1), rgba(46, 46, 95, 0.8));
 }
 
-header .logo {
-    max-height: 50px;
-    height: auto;
+img.logo {
+    max-width: 50%;
 }
 
 header .iconos {
@@ -650,6 +649,9 @@ li {
 
 /* estilos tablet */
 @media (max-width: 1024px) {
+    img.logo {
+    max-width: 40%;
+}
     .label-check {
         display: block;
     }
