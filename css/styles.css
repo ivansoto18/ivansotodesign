@@ -281,7 +281,7 @@ section.textos-legales {
 
 
 /* estilo de botones */
-.boton-porfolio {
+.boton-portfolio {
     padding-top: 20px;
 }
 
@@ -295,6 +295,7 @@ a.cv {
     text-decoration: none;
     color:#2e2e5f;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 a.cv:hover {
@@ -308,6 +309,7 @@ a.cv:hover {
     color:#2e2e5f;
     text-decoration: none;
     filter: brightness(1);
+    font-size: 0.9rem;
 }
 
 .portfolio {
