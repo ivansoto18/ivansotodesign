@@ -281,7 +281,7 @@ section.textos-legales {
 
 
 /* estilo de botones */
-button.cv {
+a.cv {
     background-color: white;
     border-radius: 5px;
     padding: 10px;
@@ -290,7 +290,7 @@ button.cv {
     cursor: pointer;
 }
 
-button.cv:hover {
+a.cv:hover {
     background-color: #f9ae12;
     border-radius: 5px;
     padding: 10px;
@@ -299,18 +299,18 @@ button.cv:hover {
     cursor: pointer;
 }
 
-button.cv a {
+.cv a {
     color:#2e2e5f;
     text-decoration: none;
 }
 
-button.cv a:hover {
+.cv a:hover {
     color:#2e2e5f;
     text-decoration: none;
     filter: brightness(1);
 }
 
-button.portfolio {
+.portfolio {
     background-color: #2e2e5f;
     border-radius: 5px;
     border: 1px solid #2e2e5f;
@@ -321,7 +321,7 @@ button.portfolio {
     cursor: pointer;
 }
 
-button.portfolio:hover {
+.portfolio:hover {
     background-color: white;
     border: 1px solid #2e2e5f;
     border-radius: 5px;
@@ -332,12 +332,12 @@ button.portfolio:hover {
     cursor: pointer;
 }
 
-button.portfolio a {
+.portfolio a {
     color: white;
     text-decoration: none;
 }
 
-button.portfolio a:hover {
+.portfolio a:hover {
     color:#2e2e5f;
     text-decoration: none;
     filter: brightness(1);
@@ -573,7 +573,7 @@ footer i.fa-brands.fa-square-behance:hover {
     filter: brightness(1);
 }
 
-.nav-links a.active {
+nav.menu a.active {
     color: #f9ae12 !important;
 }
 
