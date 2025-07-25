@@ -277,7 +277,15 @@ section.textos-legales {
     align-items: normal;
     margin: 100px 0;
 }
+.datos-contacto, .mapa {
+        width: 100%;
+        max-width: 100%;
+}
 
+.mapa iframe {
+        width: 100% !important;
+        height: 300px !important;
+}
 
 /* estilo de botones */
 .boton-portfolio {

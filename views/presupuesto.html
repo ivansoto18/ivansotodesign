@@ -37,7 +37,7 @@
 
     <main>
         <div class="flecha-top">
-            <a href="#"><img src="../assets/images/arrow-up.svg" alt="Ir al principio de la página"></a>
+            <a href="#"><img src="../assets/images/arrow-up.svg" alt="Ir al principio de la página" width="440" height="239"></a>
         </div>
 
         <div class="hero">
@@ -55,16 +55,16 @@
                         <form class="contact-form" action="https://formsubmit.co/ivansoto1892@gmail.com" method="POST">
 
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" placeholder="Indica tu nombre" pattern="[a-zA-Z]" required>
+                            <input type="text" id="name" name="name" placeholder="Indica tu nombre" pattern="[a-zA-Z]" maxlength="35" required>
                     
                             <label for="email">Correo</label>
-                            <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                            <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
                     
                             <label for="telefono">Teléfono</label>
-                            <input type="tel" name="telefono" id="telefono" placeholder="Escribe un teléfono al que poder contactarte" pattern="[0-9]" required>
+                            <input type="tel" name="telefono" id="telefono" placeholder="Escribe un teléfono al que poder contactarte" pattern="^\d{9}$" required>
                     
                             <label for="mensaje">Solicite más información</label>
-                            <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje" rows="4" required></textarea>
+                            <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje" rows="4" maxlength="500" required></textarea>
                     
                             <div class="consentimiento">
                                 <input type="checkbox" id="privacidad" name="privacidad" required>
