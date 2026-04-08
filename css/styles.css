@@ -285,7 +285,7 @@ section.textos-legales {
         max-width: 100%;
 }
 
-.mapa {
+#map {
         width: 100% !important;
         height: 600px !important;
 }

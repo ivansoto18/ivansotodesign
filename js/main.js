@@ -20,7 +20,7 @@ function success(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
 
-    let map = L.map('mapa', {
+    let map = L.map('map', {
         center:[latitude, longitude],
         zoom: 14
     })
