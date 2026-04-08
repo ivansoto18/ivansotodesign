@@ -1,4 +1,4 @@
-/* mapa contactoc*/
+/* mapa contacto*/
 
 let options = {
     enableHighAccuracy: true,
@@ -21,7 +21,7 @@ function success(position) {
     let longitude = position.coords.longitude;
 
     let map = L.map('map', {
-        center:[latitude, longitude],
+        center:[43.536511125122495, -5.637495434481138],
         zoom: 14
     })
 
