@@ -288,6 +288,7 @@ section.textos-legales {
 #map {
         width: 400px !important;
         height: 600px !important;
+        z-index: 0;
 }
 
 .leaflet-routing-container h2 {
