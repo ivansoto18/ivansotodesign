@@ -9,7 +9,7 @@
 
 /* evitar overflow-x en la pagina */
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 .contenedor, .contenedor-portfolio, .contenedor-rev {
     max-width: 100%;
