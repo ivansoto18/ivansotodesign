@@ -286,8 +286,12 @@ section.textos-legales {
 }
 
 #map {
-        width: 100% !important;
+        width: 800px !important;
         height: 600px !important;
+}
+
+.leaflet-routing-container h2 {
+    color: #2e2e5f;
 }
 
 /* estilo de botones */
