@@ -297,9 +297,9 @@ section.textos-legales {
 
 #news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -313,15 +313,16 @@ section.textos-legales {
     display: flex;
     flex-direction: column;
     border: 1px solid #ececec;
+    height: 100%;
 }
 
 .card-img {
     width: 100%;
-    height: 200px; /* Altura fija para que todas las cartas sean iguales */
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #f0f0f0; /* Color de fondo mientras carga la imagen */
+    background-color: #f0f0f0;
 }
 
 .card-content {
@@ -341,7 +342,7 @@ section.textos-legales {
 
 .card-content h3 {
     margin: 0.5rem 0;
-    font-size: 1rem;
+    font-size: 1.1rem; /* Un poco más grande para legibilidad */
     line-height: 1.4;
     color: #2e2e5f;
     display: -webkit-box;
@@ -351,9 +352,10 @@ section.textos-legales {
 
 .card-content p {
     color: black;
-    font-size: 0.8rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
 }
 
 .card-content a {
