@@ -45,26 +45,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const newsGrid = document.getElementById('news-grid');
     
     async function cargarNoticias() {
-        if (!newsGrid) return; // No carga las noticias en el resto de secciones de la página
-
-        const apiKey = 'e11b2b0b84ac19acf63cefbb4eb74895';
-        const topic = 'desarrollo web';
-        const targetUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=es&max=6&apikey=${apiKey}`;
-        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-
-        try {
-            const response = await fetch(proxyUrl);
-            if (!response.ok) throw new Error(`Error: ${response.status}`);
-
-            const data = await response.json();
-            if (data.articles) {
-                renderizarNoticias(data.articles);
-            }
-        } catch (err) {
-            console.error("Error noticias:", err);
-            newsGrid.innerHTML = "<p>No se pudieron cargar las noticias sobre desarrollo web.</p>";
-        }
+    console.log("1. Intentando cargar noticias..."); // Log de control
+    
+    if (!newsGrid) {
+        console.error("Error: No se encontró el elemento #news-grid en el HTML");
+        return; 
     }
+
+    const apiKey = 'e11b2b0b84ac19acf63cefbb4eb74895';
+    const topic = 'desarrollo web';
+    const targetUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=es&max=6&apikey=${apiKey}`;
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
+
+    try {
+        console.log("2. Llamando a la API a través del proxy...");
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        
+        console.log("3. Datos recibidos de la API:", data);
+
+        if (data.articles && data.articles.length > 0) {
+            renderizarNoticias(data.articles);
+            console.log("4. Noticias renderizadas con éxito");
+        } else {
+            console.warn("La API no devolvió artículos.");
+            newsGrid.innerHTML = "<p>No hay noticias disponibles en este momento.</p>";
+        }
+    } catch (err) {
+        console.error("Error en el proceso de noticias:", err);
+    }
+}
 
     function renderizarNoticias(articulos) {
         newsGrid.innerHTML = "";
