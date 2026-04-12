@@ -21,7 +21,7 @@ function success(position) {
     let longitude = position.coords.longitude;
 
     let map = L.map('map', {
-        center:[43.536511125122495, -5.637495434481138],
+        center:[43.363979149381855, -5.86121141910553,],
         zoom: 14
     })
 
@@ -31,7 +31,7 @@ function success(position) {
     let control = L.Routing.control ({
         waypoints: [
             L.latLng(latitude, longitude),
-            L.latLng(43.536511125122495, -5.637495434481138)
+            L.latLng(43.363979149381855, -5.86121141910553)
         ],
         language:'es',
 
