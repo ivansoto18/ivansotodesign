@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const apiKey = 'e11b2b0b84ac19acf63cefbb4eb74895';
     const topic = 'diseño web OR programación';
-    const targetUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=es&max=6&apikey=${apiKey}`;
+    const targetUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=es&max=3&apikey=${apiKey}`;
     const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
 
     try {
