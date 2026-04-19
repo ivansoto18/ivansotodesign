@@ -830,6 +830,7 @@ li {
     #news-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+        width: 90%;
     }
 }
 
@@ -946,6 +947,8 @@ li {
 
     #noticias-container {
         width: 90%;
+        margin: 50px auto;
+        padding: 0 10px;
         gap: 20px;
 
     }
