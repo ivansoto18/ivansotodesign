@@ -374,6 +374,11 @@ section.textos-legales {
     text-decoration: none;
 }
 
+#noticias-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 /* estilo de botones */
 .boton-portfolio {
     padding-top: 20px;
@@ -823,7 +828,7 @@ li {
     }
 
     #news-grid {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 }
