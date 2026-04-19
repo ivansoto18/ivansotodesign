@@ -944,6 +944,12 @@ li {
         margin: 0 auto;
     }
 
+    #noticias-container {
+        width: 90%;
+        gap: 20px;
+
+    }
+
     @media (min-width: 768px) {
         .contenedor-portfolio {
           padding: 4rem 2rem;
