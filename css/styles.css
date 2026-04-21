@@ -604,8 +604,24 @@ fieldset {
     gap: 12px;
     margin-bottom: 10px;
     padding: 2px 0;
+    width: 100%;
 }
-
+.opciones_formulario input[type="radio"],
+.opciones_formulario input[type="checkbox"] {
+    margin: 0; 
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.opciones_formulario label {
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+    line-height: 1.2;
+    margin: 0;
+    display: inline-block;
+}
 
 
 /* estilos del footer*/
