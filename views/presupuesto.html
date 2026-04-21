@@ -75,22 +75,26 @@
                                 <legend>Presupuesto</legend>
 
                                 <label for="producto">¿En qué soluciones está interesado?</label>
-                                <input type="radio" name="producto" value="pagina web sencilla" id="webSencilla">Página web sencilla (máximo 5 secciones)
-                                <input type="radio" name="producto" value="pagina web avanzada" id="webAvanzada">Página web avanzada (más de 5 secciones)
-                                <input type="radio" name="producto" value="tienda online sencilla" id="onlineSencilla">Tienda online sencilla (máximo 100 productos)
-                                <input type="radio" name="producto" value="tienda online avanzada" id="onlineAvanzada">Tienda online avanzada (más de 100 productos)
-                                <input type="radio" name="producto" value="app" id="desarrolllo">Desarrollo APP
+                                <input type="radio" name="producto" value="pagina web sencilla" id="webSencilla"><p class="radio">Página web sencilla (máximo 5 secciones)</p><br>
+                                <input type="radio" name="producto" value="pagina web avanzada" id="webAvanzada"><p class="radio">Página web avanzada (más de 5 secciones)</p><br>
+                                <input type="radio" name="producto" value="tienda online sencilla" id="onlineSencilla"><p class="radio">Tienda online sencilla (máximo 100 productos)</p><br>
+                                <input type="radio" name="producto" value="tienda online avanzada" id="onlineAvanzada"><p class="radio">Tienda online avanzada (más de 100 productos)</p><br>
+                                <input type="radio" name="producto" value="app" id="desarrolllo"><p class="radio">Desarrollo APP</p><br>
 
-                                <label for="plazo">Plazo de entrega</label>
-                                <input type="number" id="plazo_entrega" name="plazo" min="15" max="180"> días.
+                                <label for="plazo">Plazo de entrega (días)</label>
+                                <input type="number" id="plazo_entrega" name="plazo" min="15" max="180">
 
                                 <label for="extras">Extras</label>
-                                
+                                <input type="checkbox" id="hosting" value="hosting" /> Necesito hosting web</label><br>
+                                <input type="checkbox" id="compraDominio" value="compraDominio" /> Necesito comprar un dominio</label><br>
+                                <input type="checkbox" id="migracionDominio" value="migracionDominio" /> Migrar mi dominio</label><br>
+                                <input type="checkbox" id="migracionHosting" value="migracionHosting" /> Migrar mi página web</label><br>
+
+                                <label for="presupuestoTotal">Presupuesto total</label>
+
+                                <input type="text" id="presupuestoTotal" name="presupuestoTotal">
 
                             </fieldset>
-
-                            <label for="mensaje">Solicite más información</label>
-                            <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje" rows="4" maxlength="500" required></textarea>
                     
                             <div class="consentimiento">
                                 <input type="checkbox" id="privacidad" name="privacidad" required>
