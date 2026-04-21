@@ -44,7 +44,7 @@
             <h1>Presupuesto</h1>
         </div>
 
-        <section class="contenido contenido-azul">
+        <section class="contenido contenido-azul presupuesto">
             <div class="contenedor-rev">
                     <div class="texto-formulario">
                         <h2>Solicita presupuesto</h2>
@@ -75,24 +75,45 @@
                                 <legend>Presupuesto</legend>
 
                                 <label for="producto">¿En qué soluciones está interesado?</label>
-                                <input type="radio" name="producto" value="pagina web sencilla" id="webSencilla"><p class="radio">Página web sencilla (máximo 5 secciones)</p><br>
-                                <input type="radio" name="producto" value="pagina web avanzada" id="webAvanzada"><p class="radio">Página web avanzada (más de 5 secciones)</p><br>
-                                <input type="radio" name="producto" value="tienda online sencilla" id="onlineSencilla"><p class="radio">Tienda online sencilla (máximo 100 productos)</p><br>
-                                <input type="radio" name="producto" value="tienda online avanzada" id="onlineAvanzada"><p class="radio">Tienda online avanzada (más de 100 productos)</p><br>
-                                <input type="radio" name="producto" value="app" id="desarrolllo"><p class="radio">Desarrollo APP</p><br>
+
+                                <div class="opciones_formulario">
+                                    <input type="radio" name="producto" value="web sencilla" id="webSencilla">
+                                    <label for="webSencilla">Página web sencilla (máximo 5 secciones)</label>
+                                </div>
+
+                                <div class="opciones_formulario">
+                                    <input type="radio" name="producto" value="web avanzada" id="webAvanzada">
+                                    <label for="webAvanzada">Página web avanzada (más de 5 secciones)</label>
+                                </div>
+
+                                <div class="opciones_formulario">
+                                    <input type="radio" name="producto" value="tienda online sencilla" id="onlineSencilla">
+                                    <label for="onlineSencila">Tienda online sencilla (máx. 100 productos)</label>
+                                </div>
+
+                                <div class="opciones_formulario">
+                                    <input type="radio" name="producto" value="tienda online avanzada" id="onlineAvanzada">
+                                    <label for="onlineAvanzada">Tienda online avanzada (más 100 productos)</label>
+                                </div>
 
                                 <label for="plazo">Plazo de entrega (días)</label>
                                 <input type="number" id="plazo_entrega" name="plazo" min="15" max="180">
 
                                 <label for="extras">Extras</label>
-                                <input type="checkbox" id="hosting" value="hosting" /> Necesito hosting web</label><br>
-                                <input type="checkbox" id="compraDominio" value="compraDominio" /> Necesito comprar un dominio</label><br>
-                                <input type="checkbox" id="migracionDominio" value="migracionDominio" /> Migrar mi dominio</label><br>
-                                <input type="checkbox" id="migracionHosting" value="migracionHosting" /> Migrar mi página web</label><br>
+
+                                <div class="opciones_formulario">
+                                    <input type="checkbox" id="hosting" value="hosting">
+                                    <label for="hosting">Necesito hosting web</label>
+                                </div>
+                                
+                                <div class="opciones_formulario">
+                                    <input type="checkbox" id="compraDominio" value="compraDominio">
+                                    <label for="compraDominio">Necesito comprar un dominio</label>
+                                </div>
 
                                 <label for="presupuestoTotal">Presupuesto total</label>
 
-                                <input type="text" id="presupuestoTotal" name="presupuestoTotal">
+                                <input type="text" id="presupuestoTotal" name="presupuestoTotal" readonly value="0 €">
 
                             </fieldset>
                     
