@@ -623,6 +623,13 @@ fieldset {
     display: inline-block;
 }
 
+input#presupuestoTotal {
+    border: 0px;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 700;
+}
+
 
 /* estilos del footer*/
 footer {
