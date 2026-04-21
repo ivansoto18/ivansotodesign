@@ -132,6 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         form.addEventListener('change', calcularPresupuesto);
         form.addEventListener('input', calcularPresupuesto);
+
+        calcularPresupuesto(); // Función para calcular el presupuesto
     }
 
 });
