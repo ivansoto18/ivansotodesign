@@ -94,7 +94,92 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Ejecutar la carga de noticias
+    /* Ejecutar la carga de noticias */
     cargarNoticias();
 
+    /* Calculo de precio selección en formulario */
+
+    const form = document.querySelector('.contact-form');
+    const totalDisplay = document.getElementById('presupuestoTotal');
+
+    if (form && totalDisplay) {
+        const calcularPresupuesto = () => {
+            let total = 0;
+
+            /* Cálculo de valor de producto */
+            const productoSeleccionado = form.querySelector('input[name="producto"]:checked');
+            if (productoSeleccionado) {
+                total += parseFloat(productoSeleccionado.value);
+            }
+
+            /* Cálculo de extras */
+            const extras = form.querySelectorAll('input[type="checkbox"]:checked');
+            extras.forEach(extra => {
+                if (extra.id !== 'privacidad' && extra.value) {
+                    total += parseFloat(extra.value);
+                }
+            });
+
+            /* Cálculo de plazo */
+            const plazoInput = document.getElementById('plazo_entrega');
+            const plazo = plazoInput ? parseInt(plazoInput.value) || 0 : 0;
+            if (plazo > 60) {
+                total *= 0.80; /* 20% descuento si el plazo es mayor a 60 días */
+            }
+
+            totalDisplay.value = total.toFixed(2) + " €";
+        };
+
+        form.addEventListener('change', calcularPresupuesto);
+        form.addEventListener('input', calcularPresupuesto);
+    }
+
 });
+
+/* validación de datos formulario */
+
+function validar(formulario) {
+    let valido = true;
+    let mensajesError = "";
+
+    /* Validar nombre */
+
+    const validarNombre = /^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{1,15}$/;
+    if (!validarNombre.test(formulario.name.value)) {
+        valido = false;
+        mensajesError += "- Nombre: letras solamente y máx 15 caracteres.\n";
+    }
+
+    /* Validar apellido */
+
+    const validarApellido = /^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{1,40}$/;
+    if (!validarApellido.test(formulario.apellido.value)) {
+        valido = false;
+        mensajesError += "- Apellido: letras solamente y máx 40 caracteres.\n";
+    }
+
+    /* Validar teléfono */
+
+    const validarTelefono = /^[0-9]{9}$/;
+    if (!validarTelefono.test(formulario.telefono.value)) {
+        valido = false;
+        mensajesError += "- Teléfono: exactamente 9 números.\n";
+    }
+
+    /* Validar email */
+
+    const validarEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!validarEmail.test(formulario.email.value)) {
+        valido = false;
+        mensajesError += "- Email no válido.\n";
+    }
+
+    /* Validación final datos formulario */
+
+    if (valido) {
+        alert("Muchas gracias por enviar el formulario. Me pondré en contacto contigo pronto.");
+        formulario.submit();
+    } else {
+        alert("Errores en el formulario:\n" + mensajesError);
+    }
+}

@@ -58,16 +58,16 @@
                                 <legend>Datos de contacto</legend>
 
                                 <label for="name">Nombre</label>
-                                <input type="text" id="name" name="name" placeholder="Indica tu nombre" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]{1,40}" maxlength="40" required>
+                                <input type="text" id="name" name="name" placeholder="Indica tu nombre" required>
 
                                 <label for="apellido">Apellido</label>
-                                <input type="text" id="apellido" name="apellido" placeholder="Indica tu apellido" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]{1,40}" maxlength="40" required>
+                                <input type="text" id="apellido" name="apellido" placeholder="Indica tu apellido" required>
 
                                 <label for="telefono">Teléfono de contacto</label>
-                                <input type="tel" name="telefono" id="telefono" placeholder="Escribe un teléfono al que poder contactarte" pattern="^\d{9}$" required>
+                                <input type="tel" name="telefono" id="telefono" placeholder="Escribe un teléfono al que poder contactarte" required>
                                 
                                 <label for="email">Correo electrónico</label>
-                                <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required title="Introduce un correo electrónico válido">
+                                <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required title="Introduce un correo electrónico válido">
 
                             </fieldset>
 
@@ -77,37 +77,37 @@
                                 <label for="producto">¿En qué soluciones está interesado?</label>
 
                                 <div class="opciones_formulario">
-                                    <input type="radio" name="producto" value="web sencilla" id="webSencilla">
+                                    <input type="radio" name="producto" value="600" id="webSencilla">
                                     <label for="webSencilla">Página web sencilla (máximo 5 secciones)</label>
                                 </div>
 
                                 <div class="opciones_formulario">
-                                    <input type="radio" name="producto" value="web avanzada" id="webAvanzada">
+                                    <input type="radio" name="producto" value="1000" id="webAvanzada">
                                     <label for="webAvanzada">Página web avanzada (más de 5 secciones)</label>
                                 </div>
 
                                 <div class="opciones_formulario">
-                                    <input type="radio" name="producto" value="tienda online sencilla" id="onlineSencilla">
+                                    <input type="radio" name="producto" value="700" id="onlineSencilla">
                                     <label for="onlineSencila">Tienda online sencilla (máx. 100 productos)</label>
                                 </div>
 
                                 <div class="opciones_formulario">
-                                    <input type="radio" name="producto" value="tienda online avanzada" id="onlineAvanzada">
+                                    <input type="radio" name="producto" value="1200" id="onlineAvanzada">
                                     <label for="onlineAvanzada">Tienda online avanzada (más 100 productos)</label>
                                 </div>
 
                                 <label for="plazo">Plazo de entrega (días)</label>
-                                <input type="number" id="plazo_entrega" name="plazo" min="15" max="180">
+                                <input type="number" id="plazo_entrega" name="plazo" min="15" max="180" value="30" class="calculable">
 
                                 <label for="extras">Extras</label>
 
                                 <div class="opciones_formulario">
-                                    <input type="checkbox" id="hosting" value="hosting">
+                                    <input type="checkbox" id="hosting" value="200" class="calculable">
                                     <label for="hosting">Necesito hosting web</label>
                                 </div>
                                 
                                 <div class="opciones_formulario">
-                                    <input type="checkbox" id="compraDominio" value="compraDominio">
+                                    <input type="checkbox" id="compraDominio" value="compraDominio" value="25" class="calculable">
                                     <label for="compraDominio">Necesito comprar un dominio</label>
                                 </div>
 
@@ -129,7 +129,7 @@
                                 <!--Asunto del correo-->
                                 <input type="hidden" name="_subject" value="Solicitud de presupuesto">
                     
-                                <input type="submit" value="Enviar">
+                                <input type="button" value="Enviar" onClick="validar(this.form);">
                         </form>
                     </div>
 
