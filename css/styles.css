@@ -525,7 +525,7 @@ a.portfolio:hover {
 
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px 0;
 }
@@ -940,6 +940,10 @@ li {
         gap: 2rem;
         width: 90%;
     }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* estilos movil */
@@ -1061,11 +1065,17 @@ li {
 
     }
 
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+    .galeria-foto {
+        height: 250px;
+    }
+}
+
     @media (min-width: 768px) {
         .contenedor-portfolio {
           padding: 4rem 2rem;
         }
 
-    }
-        
     }
