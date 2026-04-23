@@ -3,137 +3,103 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     const mapContainer = document.getElementById('map');
-    
     if (mapContainer) {
-        let options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
+        let options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
+        
+        const success = (position) => {
+            let map = L.map('map').setView([43.363979149381855, -5.86121141910553], 14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Iván Soto Design'
+            }).addTo(map);
+            L.marker([43.363979149381855, -5.86121141910553]).addTo(map)
+                .bindPopup('Iván Soto - Diseñador Web').openPopup();
+        };
+
+        const error = (err) => {
+            let map = L.map('map').setView([43.363979149381855, -5.86121141910553], 14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
         };
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(success, error, options);
-        } else {
-            alert("Los servicios de geolocalización no están disponibles.");
         }
-    }
-
-    function success(position) {
-        // Si se necesitan, mostramos las coordenadas del usuario
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-
-        let map = L.map('map').setView([43.363979149381855, -5.86121141910553], 14);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Iván Soto Design'
-        }).addTo(map);
-
-        L.marker([43.363979149381855, -5.86121141910553]).addTo(map)
-            .bindPopup('Iván Soto - Diseñador Web')
-            .openPopup();
-    }
-
-    function error(err) {
-        console.warn(`Error de geolocalización (${err.code}): ${err.message}`);
-        // Si el usuario niega la geolocalización, cargamos el mapa igual en nuestra ubicación
-        let map = L.map('map').setView([43.363979149381855, -5.86121141910553], 14);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
     }
 
     // Noticias en Home
     const newsGrid = document.getElementById('news-grid');
-    
-    async function cargarNoticias() {
-    console.log("1. Intentando cargar noticias..."); // Log de control
-    
-    if (!newsGrid) {
-        console.error("Error: No se encontró el elemento #news-grid en el HTML");
-        return; 
-    }
+    if (newsGrid) {
+        async function cargarNoticias() {
+            const apiKey = 'e11b2b0b84ac19acf63cefbb4eb74895';
+            const topic = 'diseño web OR programación';
+            const targetUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=es&max=3&apikey=${apiKey}`;
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
 
-    const apiKey = 'e11b2b0b84ac19acf63cefbb4eb74895';
-    const topic = 'diseño web OR programación';
-    const targetUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(topic)}&lang=es&max=3&apikey=${apiKey}`;
-    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-
-    try {
-        console.log("2. Llamando a la API a través del proxy...");
-        const response = await fetch(proxyUrl);
-        const data = await response.json();
-        
-        console.log("3. Datos recibidos de la API:", data);
-
-        if (data.articles && data.articles.length > 0) {
-            renderizarNoticias(data.articles);
-            console.log("4. Noticias renderizadas con éxito");
-        } else {
-            console.warn("La API no devolvió artículos.");
-            newsGrid.innerHTML = "<p>No hay noticias disponibles en este momento.</p>";
+            try {
+                const response = await fetch(proxyUrl);
+                const data = await response.json();
+                if (data.articles && data.articles.length > 0) {
+                    renderizarNoticias(data.articles);
+                }
+            } catch (err) {
+                console.warn("Error al cargar noticias:", err);
+            }
         }
-    } catch (err) {
-        console.error("Error en el proceso de noticias:", err);
-    }
-}
 
-    function renderizarNoticias(articulos) {
-        newsGrid.innerHTML = "";
-        articulos.forEach(art => {
-            const card = document.createElement('article');
-            card.className = 'news-card';
-            card.innerHTML = `
-                <div class="card-img" style="background-image: url('${art.image || './assets/images/favicon.webp'}')"></div>
-                <div class="card-content">
-                    <small>${new Date(art.publishedAt).toLocaleDateString('es-ES')}</small>
-                    <h3>${art.title}</h3>
-                    <p>${art.description.substring(0, 100)}...</p>
-                    <a href="${art.url}" target="_blank">Leer más</a>
-                </div>
-            `;
-            newsGrid.appendChild(card);
-        });
+        function renderizarNoticias(articulos) {
+            newsGrid.innerHTML = "";
+            articulos.forEach(art => {
+                const card = document.createElement('article');
+                card.className = 'news-card';
+                card.innerHTML = `
+                    <div class="card-img" style="background-image: url('${art.image || '../assets/images/favicon.webp'}')"></div>
+                    <div class="card-content">
+                        <small>${new Date(art.publishedAt).toLocaleDateString('es-ES')}</small>
+                        <h3>${art.title}</h3>
+                        <p>${art.description.substring(0, 100)}...</p>
+                        <a href="${art.url}" target="_blank">Leer más</a>
+                    </div>
+                `;
+                newsGrid.appendChild(card);
+            });
+        }
+        /* Ejecutar la carga de noticias */
+        cargarNoticias();
     }
-
-    /* Ejecutar la carga de noticias */
-    cargarNoticias();
 
     /* Calculo de precio selección en formulario */
 
-    const form = document.querySelector('.contact-form');
+    const formPresupuesto = document.querySelector('.contact-form');
     const totalDisplay = document.getElementById('presupuestoTotal');
 
-    if (form && totalDisplay) {
+    if (formPresupuesto && totalDisplay) {
         const calcularPresupuesto = () => {
             let total = 0;
+            /* cálculo de producto */
+            const producto = formPresupuesto.querySelector('input[name="producto"]:checked');
+            if (producto) total += parseFloat(producto.value);
 
-            /* Cálculo de valor de producto */
-            const productoSeleccionado = form.querySelector('input[name="producto"]:checked');
-            if (productoSeleccionado) {
-                total += parseFloat(productoSeleccionado.value);
-            }
-
-            /* Cálculo de extras */
-            const extras = form.querySelectorAll('input[type="checkbox"]:checked');
+            /* calculo de extra*/
+            const extras = formPresupuesto.querySelectorAll('input[type="checkbox"]:checked');
             extras.forEach(extra => {
-                if (extra.id !== 'privacidad' && extra.value) {
+                if (extra.id !== 'privacidad' && !isNaN(parseFloat(extra.value))) {
                     total += parseFloat(extra.value);
                 }
             });
 
-            /* Cálculo de plazo */
+            /* calculo de plazo con 20% dto. para más de 60 días */
             const plazoInput = document.getElementById('plazo_entrega');
             const plazo = plazoInput ? parseInt(plazoInput.value) || 0 : 0;
-            if (plazo > 60) {
-                total *= 0.80; /* 20% descuento si el plazo es mayor a 60 días */
-            }
-
+            if (plazo > 60) total *= 0.80;
+            
+            /* muestra de importe total */
             totalDisplay.value = total.toFixed(2) + " €";
         };
 
-        form.addEventListener('change', calcularPresupuesto);
-        form.addEventListener('input', calcularPresupuesto);
+        formPresupuesto.addEventListener('change', calcularPresupuesto);
+        formPresupuesto.addEventListener('input', calcularPresupuesto);
 
-        calcularPresupuesto(); // Función para calcular el presupuesto
+        /* formula para calcular presupuesto */
+        calcularPresupuesto();
     }
 
 });
@@ -188,23 +154,17 @@ function validar(formulario) {
 
 /* galería jQuery */
 
-$(document).ready(function() {
-    $('.galeria-foto').click(function() {
-        const rutaImagen = $(this).find('img').attr('src');
-        const textoAlt = $(this).find('img').attr('alt');
+if ($('.galeria-foto').length > 0) {
+        $('.galeria-foto').on('click', function() {
+            const img = $(this).find('img');
+            $('#img-ampliada').attr('src', img.attr('src'));
+            $('#caption').text(img.attr('alt'));
+            $('#visor-galeria').fadeIn();
+        });
 
-        $('#img-ampliada').attr('src', rutaImagen);
-        $('#caption').text(textoAlt);
-        $('#visor-galeria').fadeIn();
-    });
-
-    $('.cerrar').click(function() {
-        $('#visor-galeria').fadeOut();
-    });
-
-    $('#visor-galeria').click(function(event) {
-        if (!$(event.target).is('#img-ampliada')) {
-            $(this).fadeOut();
-        }
-    });
-});
+        $('.cerrar, #visor-galeria').on('click', function(e) {
+            if (e.target !== document.getElementById('img-ampliada')) {
+                $('#visor-galeria').fadeOut();
+            }
+        });
+    }
