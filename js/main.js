@@ -185,3 +185,26 @@ function validar(formulario) {
         alert("Errores en el formulario:\n" + mensajesError);
     }
 }
+
+/* galería jQuery */
+
+$(document).ready(function() {
+    $('.galeria-foto').click(function() {
+        const rutaImagen = $(this).find('img').attr('src');
+        const textoAlt = $(this).find('img').attr('alt');
+
+        $('#img-ampliada').attr('src', rutaImagen);
+        $('#caption').text(textoAlt);
+        $('#visor-galeria').fadeIn();
+    });
+
+    $('.cerrar').click(function() {
+        $('#visor-galeria').fadeOut();
+    });
+
+    $('#visor-galeria').click(function(event) {
+        if (!$(event.target).is('#img-ampliada')) {
+            $(this).fadeOut();
+        }
+    });
+});

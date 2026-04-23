@@ -521,6 +521,75 @@ a.portfolio:hover {
     color:#2e2e5f;
 }
 
+/* seccion galeria */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.galeria-foto {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.img-galeria {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-foto:hover .img-galeria {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: rgba(46, 46, 95, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-foto:hover .overlay {
+    opacity: 1;
+}
+
+.visor {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.visor-contenido {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 70vh;
+}
+
+.cerrar {
+    position: absolute;
+    top: 50px; right: 50px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* estilos formulario */
 .formulario {
     width: 100%;

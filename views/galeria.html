@@ -8,6 +8,7 @@
     <link rel="icon" type="image/webp" href="../assets/images/favicon.webp">
     <title>Galería | Iván Soto - Diseñador web y gráfico</title>
     <script src="https://kit.fontawesome.com/f0618a2a0c.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -42,107 +43,39 @@
         </div>
 
         <div class="hero">
-            <h1>Portfolio</h1>
+            <h1>Galería</h1>
         </div>
 
         <section class="contenido-portfolio-web">
             <div class="contenedor-portfolio-seccion">
-                <h2>Diseño web</h2>
-                <div class="trabajos">
+                <p>Descubre algunos de mis últimos trabajos de diseño web.</p>
+                <div class="galeria">
 
-                    <div class="trabajo">
-                        <img src="../assets/images/ecosoft-consulting-ivan-soto-diseno-web-asturias.jpg" alt="Secciones de ecoSoft Consulting" width="1200" height="900">
-                        <div class="descripcion">
-                        <p>Secciones de ecoSoft Consulting</p>
-                        </div>
+                    <div class="galeria-foto">
+                        <img src="../assets/images/centro-sinapsia-diseno-web-asturias-ivan-soto-design.webp" alt="Página web Centro Sinapsia" class="img-galeria">
+                        <div class="overlay"><span>Página web Centro Sinapsia</span></div>
                     </div>
 
-                    <div class="trabajo">
-                    <img src="../assets/images/acd-rehabilitacion-diseno-web-ivan-soto-diseno-web-asturias.jpg" alt="Página web ACD Rehabilitación" width="1200" height="900">
-                        <div class="descripcion">
-                        <p>Página web ACD Rehabilitación</p>
-                        </div>
+                    <div class="galeria-foto">
+                        <img src="../assets/images/dentaclinic-diseno-web-ivan-soto-design.webp" alt="Página web Dentaclinic" class="img-galeria">
+                        <div class="overlay"><span>Página web Dentaclinic</span></div>
                     </div>
 
-                    <div class="trabajo">
-                    <img src="../assets/images/ftmpa-ivan-soto-disenador-paginas-web-asturias.jpg" alt="Página web de la Federación de Tenis de Mesa del Principado de Asturias (FTMPA)" width="1200" height="900">
-                        <div class="descripcion">
-                        <p>Página web FTMPA</p>
-                        </div>
+                    <div class="galeria-foto">
+                        <img src="../assets/images/jorge-nava-pintor-diseno-web-asturias-ivan-soto.webp" alt="Página web Jorge Nava Studio" class="img-galeria">
+                        <div class="overlay"><span>Página web Jorge Nava Studio</span></div>
                     </div>
 
-                    <div class="trabajo">
-                        <img src="../assets/images/ayrins-tienda-online-ivan-soto-disenador-web-asturias.jpg" alt="Tienda online de Ayrins" width="1200" height="900">
-                            <div class="descripcion">
-                            <p>Tienda online Ayrins</p>
-                            </div>
-                    </div>
+                    <div id="visor-galeria" class="visor">
+                        <span class="cerrar">&times;</span>
+                        <img class="visor-contenido" id="img-ampliada">
+                        <div id="caption"></div>
 
-                    <div class="trabajo">
-                        <img src="../assets/images/mjd-sport-pagina-web-tienda-online-ivan-soto-disenador-web-asturias.jpg" alt="Página web de MJD Sport" width="1200" height="900">
-                            <div class="descripcion">
-                            <p>Página web MJD Sport</p>
-                            </div>
-                    </div>
-
-                    <div class="trabajo">
-                        <img src="../assets/images/vypconcept-diseno-web-ivan-soto-asturias.jpg" alt="Tienda online de Vyp Concept" width="1200" height="900">
-                            <div class="descripcion">
-                            <p>Tienda online Vyp Concept</p>
-                            </div>
-                    </div>
+                 
                 </div>
             </div>
         </section>
 
-        <section class="contenido-portfolio-grafico">
-            <div class="contenedor-portfolio-seccion">
-                <h2>Diseño gráfico</h2>
-                <div class="trabajos">
-                    <div class="trabajo">
-                        <img src="../assets/images/dossier-fundas-inspiral-ivan-soto-diseno-grafico-asturias.png" alt="Dossier Fundas Inspiral" width="1200" height="900">
-                        <div class="descripcion">
-                        <p>Dossier Fundas Inspiral</p>
-                        </div>
-                    </div>
-                    <div class="trabajo">
-                    <img src="../assets/images/revive-servicios-inmobiliarios-dossier-ivan-soto-diseno-grafico-asturias.png" alt="Dossier Revive Servicios Inmobiliarios" width="1000" height="1000">
-                        <div class="descripcion">
-                        <p>Dossier Revive Servicios Inmobiliarios</p>
-                        </div>
-                    </div>
-
-                    <div class="trabajo">
-                        <img src="../assets/images/vetusta-triatlon-cartel-ivan-soto-disenador-grafico-asturias.png" alt="Cartel Vetusta Triatlón" width="1200" height="1084">
-                            <div class="descripcion">
-                            <p>Cartel Vetusta Triatlón</p>
-                            </div>
-                    </div>
-                            
-                    <div class="trabajo">
-                    <img src="../assets/images/i-gala-solidaria-prueba-con-una-sonrisa-cartel-vale-diseno-grafico-asturias.png" alt="Cartel y vale I Gala Solidaria Prueba con una Sonrisa" width="500" height="391">
-                        <div class="descripcion">
-                        <p>I Gala Solidaria Prueba con una Sonrisa</p>
-                        </div>
-                    </div>
-
-                    <div class="trabajo">
-                        <img src="../assets/images/triptico-gc-idiomas-diseno-grafico-asturias.png" alt="Tríptico GC Idiomas" width="808" height="646">
-                            <div class="descripcion">
-                            <p>Tríptico GC Idiomas</p>
-                            </div>
-                    </div>
-
-                    <div class="trabajo">
-                        <img src="../assets/images/tarjetas-visita-la-cotaraxa-ivan-soto-diseno-grafico-asturias.png" alt="Tarjetas de visita La Cotaraxa" width="1200" height="900">
-                            <div class="descripcion">
-                            <p>Tarjetas visita La Cotaraxa</p>
-                            </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
