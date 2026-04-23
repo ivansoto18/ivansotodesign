@@ -943,6 +943,13 @@ li {
 
     .galeria {
         grid-template-columns: repeat(2, 1fr);
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .contenido-portfolio-web p.galeria {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 
@@ -1067,9 +1074,16 @@ li {
 
     .galeria {
         grid-template-columns: 1fr;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     .galeria-foto {
         height: 250px;
+    }
+
+    .contenido-portfolio-web p.galeria {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 
